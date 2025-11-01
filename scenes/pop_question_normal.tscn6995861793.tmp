@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1nn07yw52agk"]
+
+[ext_resource type="Script" uid="uid://bt81gji5eygdw" path="res://scripts/pop_question_normal.gd" id="1_yhjrt"]
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/main_menu/themes_buttons.png" id="2_mcvku"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/general/return.png" id="3_hn13v"]
+[ext_resource type="Texture2D" uid="uid://g244t00ed0bl" path="res://assets/Image_assets/general/return_hover.png" id="4_xeyaa"]
+[ext_resource type="Texture2D" uid="uid://6aqpm30h7pv0" path="res://expo_game.icon.png" id="5_mcvku"]
+
+[node name="pop_quest_normal" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -51.0
+offset_right = -23.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhjrt")
+
+[node name="texture_no" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.125
+anchor_right = 0.96
+anchor_bottom = 0.993
+offset_left = 40.664
+offset_top = 33.75
+offset_right = 60.432
+offset_bottom = 46.082
+texture = ExtResource("2_mcvku")
+region_rect = Rect2(160.938, 31.77, 96.437, 96.5851)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="image_question" type="TextureRect" parent="texture_no"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(550, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234
+anchor_top = 0.007
+anchor_right = 0.75
+anchor_bottom = 0.558
+offset_left = -0.772552
+offset_top = 0.721236
+offset_right = 1.80591
+offset_bottom = 5.92136
+expand_mode = 1
+stretch_mode = 5
+
+[node name="answer_scroll" type="ScrollContainer" parent="texture_no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.71
+anchor_right = 0.831
+anchor_bottom = 0.921
+offset_left = 0.095993
+offset_top = 0.149994
+offset_right = -0.128052
+offset_bottom = 0.264954
+
+[node name="answer_d" type="LineEdit" parent="texture_no/answer_scroll"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 61
+placeholder_text = "Your Answer"
+alignment = 1
+expand_to_text_length = true
+
+[node name="questopm_Scroll" type="ScrollContainer" parent="texture_no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.097
+anchor_top = 0.073
+anchor_right = 0.918
+anchor_bottom = 0.54
+offset_left = -0.536003
+offset_top = -0.0550041
+offset_right = 0.215942
+offset_bottom = 0.0999756
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="question_d" type="Label" parent="texture_no/questopm_Scroll"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(839, 224)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 61
+text = "Hello Goodbye"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="skip" type="TextureButton" parent="texture_no"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_top = 0.054
+anchor_right = 0.114
+anchor_bottom = 0.293
+offset_left = -4.0
+offset_top = 0.109999
+offset_right = -0.0320053
+offset_bottom = 0.244995
+texture_normal = ExtResource("3_hn13v")
+texture_hover = ExtResource("4_xeyaa")
+
+[node name="submit" type="TextureButton" parent="texture_no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.858
+anchor_top = 0.72
+anchor_right = 0.975
+anchor_bottom = 0.959
+offset_left = -0.504028
+offset_top = -0.200012
+offset_right = 0.199951
+offset_bottom = -0.0650024
+texture_normal = ExtResource("5_mcvku")
+
+[connection signal="pressed" from="texture_no/skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="texture_no/submit" to="." method="_on_submit_pressed"]

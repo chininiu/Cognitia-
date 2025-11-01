@@ -1,0 +1,333 @@
+[gd_scene load_steps=17 format=3 uid="uid://c0mcyjgy8nhl0"]
+
+[ext_resource type="Script" uid="uid://dplkl1b5n4vlm" path="res://scripts/questions_scene.gd" id="1_qo3ei"]
+[ext_resource type="Theme" uid="uid://y47r3hg0jxr2" path="res://assets/GUI RESOURCES/questions_scene_scroll_none.tres" id="2_200cx"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="2_b7717"]
+[ext_resource type="Script" uid="uid://dy0q8gucs1k3q" path="res://scripts/flashcards.gd" id="3_okaxy"]
+[ext_resource type="Texture2D" uid="uid://btoofcutfb1mu" path="res://assets/Image_assets/buttons/add_button_normal.png" id="3_t5dcu"]
+[ext_resource type="Texture2D" uid="uid://cxh100uwnqrqt" path="res://assets/Image_assets/buttons/add_button_hover.png" id="4_1gna4"]
+[ext_resource type="Texture2D" uid="uid://c8jmdt0vsy5u8" path="res://assets/Image_assets/buttons/question_symbol.png" id="4_xanvk"]
+[ext_resource type="Texture2D" uid="uid://cilse7e4w510v" path="res://assets/Image_assets/buttons/add_img_normal.png" id="5_1gna4"]
+[ext_resource type="Texture2D" uid="uid://775pncjld3qk" path="res://assets/Image_assets/buttons/add_img_hover.png" id="6_ftnb7"]
+[ext_resource type="Texture2D" uid="uid://cwii5sgkdsb1q" path="res://assets/Image_assets/buttons/start_btn_normal.png" id="7_bawhj"]
+[ext_resource type="Texture2D" uid="uid://6olvbpbqxfa" path="res://assets/Image_assets/buttons/start_btn_hover.png" id="8_74mt8"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/buttons/return.png" id="10_okaxy"]
+[ext_resource type="Texture2D" uid="uid://g244t00ed0bl" path="res://assets/Image_assets/buttons/return_hover.png" id="11_3vr87"]
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/buttons/themes_buttons.png" id="12_1vif5"]
+[ext_resource type="Texture2D" uid="uid://csa1h162lwrls" path="res://assets/Image_assets/buttons/decrement_time.png" id="12_3vr87"]
+[ext_resource type="Texture2D" uid="uid://c1aj47eyg706e" path="res://assets/Image_assets/buttons/increment_time.png" id="13_u5rw7"]
+
+[node name="question_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo3ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.14902, 0.196078, 1)
+
+[node name="description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -282.0
+offset_top = 5.0
+offset_right = 859.0
+offset_bottom = 245.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_b7717")
+theme_override_font_sizes/font_size = 51
+text = "Click \"+\" at the bottom right"
+vertical_alignment = 1
+
+[node name="falshcard_no" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78
+anchor_top = 0.135
+anchor_right = 0.78
+anchor_bottom = 0.135
+offset_left = -889.56
+offset_top = 263.52
+offset_right = -652.56
+offset_bottom = 502.52
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("4_xanvk")
+
+[node name="question_contain" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.335
+anchor_right = 0.815
+anchor_bottom = 1.0
+offset_left = -0.0559998
+offset_top = -0.0800018
+offset_right = 0.119934
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_200cx")
+
+[node name="vbox_ques" type="VBoxContainer" parent="question_contain"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+script = ExtResource("3_okaxy")
+
+[node name="card_btn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.877
+anchor_top = 0.795
+anchor_right = 0.978
+anchor_bottom = 0.973
+offset_left = 1.69604
+offset_top = -0.160034
+offset_right = 13.344
+offset_bottom = 12.496
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("3_t5dcu")
+texture_hover = ExtResource("4_1gna4")
+
+[node name="img_btn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.877
+anchor_top = 0.574
+anchor_right = 0.985
+anchor_bottom = 0.762
+offset_left = -0.303955
+offset_top = 0.0480042
+offset_right = 14.2799
+offset_bottom = 13.224
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("5_1gna4")
+texture_hover = ExtResource("6_ftnb7")
+
+[node name="start_btn" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_left = 0.013
+anchor_top = 0.789
+anchor_right = 0.124
+anchor_bottom = 0.986
+offset_left = 0.0240002
+offset_top = -0.272034
+offset_right = 0.151993
+offset_bottom = 0.0719604
+texture_normal = ExtResource("7_bawhj")
+texture_hover = ExtResource("8_74mt8")
+
+[node name="return_btn" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_top = 0.003
+anchor_right = 0.075
+anchor_bottom = 0.128
+offset_left = -2.0
+offset_top = 0.056
+offset_right = 39.6
+offset_bottom = 47.056
+scale = Vector2(0.695, 0.695)
+texture_normal = ExtResource("10_okaxy")
+texture_hover = ExtResource("11_3vr87")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 50.0
+offset_right = 1140.0
+offset_bottom = 125.0
+texture = ExtResource("12_1vif5")
+region_rect = Rect2(161.2, 31.6388, 95.9597, 96.6492)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="minutes" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.432
+anchor_bottom = 0.974
+offset_left = 22.0001
+offset_top = -2.0
+offset_right = -1.03993
+offset_bottom = 0.00201416
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="colon" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.383
+anchor_right = 0.568
+anchor_bottom = 1.0
+offset_left = -13.8769
+offset_top = -5.0
+offset_right = 17.423
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="second" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.559
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.420975
+offset_top = -3.0
+offset_right = -25.441
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="min" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.265
+anchor_top = 0.853
+anchor_right = 0.265
+anchor_bottom = 0.853
+offset_left = -33.41
+offset_top = -13.975
+offset_right = 100.59
+offset_bottom = 42.025
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_b7717")
+theme_override_font_sizes/font_size = 31
+text = "min"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="seconds" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.719
+anchor_top = 0.867
+anchor_right = 0.719
+anchor_bottom = 0.867
+offset_left = -47.486
+offset_top = -14.025
+offset_right = 142.514
+offset_bottom = 41.975
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_b7717")
+theme_override_font_sizes/font_size = 31
+text = "sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="increment_minute" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 974.0
+offset_top = 18.0
+offset_right = 1102.0
+offset_bottom = 146.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_u5rw7")
+flip_v = true
+
+[node name="increment_seconds" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 18.0
+offset_right = 1194.0
+offset_bottom = 146.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_u5rw7")
+flip_v = true
+
+[node name="decrement_minute" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 974.0
+offset_top = 125.0
+offset_right = 1102.0
+offset_bottom = 253.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_3vr87")
+
+[node name="decrement_seconds" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 125.0
+offset_right = 1194.0
+offset_bottom = 253.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_3vr87")
+
+[node name="notice_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148
+anchor_top = 0.179
+anchor_right = 0.815
+anchor_bottom = 0.289
+offset_left = 0.503998
+offset_top = 0.00799561
+offset_right = 1792.12
+offset_bottom = 165.728
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_b7717")
+theme_override_font_sizes/font_size = 90
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="no_of_flashcard" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 66.0
+offset_top = 292.0
+offset_right = 145.0
+offset_bottom = 474.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 181
+text = "0"
+
+[connection signal="mouse_entered" from="card_btn" to="." method="_on_card_btn_mouse_entered"]
+[connection signal="mouse_exited" from="card_btn" to="." method="_on_card_btn_mouse_exited"]
+[connection signal="pressed" from="card_btn" to="." method="_on_card_btn_pressed"]
+[connection signal="mouse_entered" from="img_btn" to="." method="_on_img_btn_mouse_entered"]
+[connection signal="mouse_exited" from="img_btn" to="." method="_on_img_btn_mouse_exited"]
+[connection signal="pressed" from="img_btn" to="." method="_on_img_btn_pressed"]
+[connection signal="pressed" from="start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="return_btn" to="." method="_on_return_btn_pressed"]
+[connection signal="pressed" from="increment_minute" to="." method="_on_increment_minute_pressed"]
+[connection signal="pressed" from="increment_seconds" to="." method="_on_increment_seconds_pressed"]
+[connection signal="pressed" from="decrement_minute" to="." method="_on_decrement_minute_pressed"]
+[connection signal="pressed" from="decrement_seconds" to="." method="_on_decrement_seconds_pressed"]

@@ -1,0 +1,253 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0mcyjgy8nhl0"]
+
+[ext_resource type="Script" uid="uid://dplkl1b5n4vlm" path="res://scripts/questions_scene.gd" id="1_qo3ei"]
+[ext_resource type="Theme" uid="uid://y47r3hg0jxr2" path="res://assets/GUI RESOURCES/questions_scene_scroll_none.tres" id="2_200cx"]
+[ext_resource type="Script" uid="uid://dy0q8gucs1k3q" path="res://scripts/flashcards.gd" id="3_okaxy"]
+[ext_resource type="Texture2D" uid="uid://btoofcutfb1mu" path="res://assets/Image_assets/question_scene/add_button_normal.png" id="3_t5dcu"]
+[ext_resource type="Texture2D" uid="uid://cxh100uwnqrqt" path="res://assets/Image_assets/question_scene/add_button_hover.png" id="4_1gna4"]
+[ext_resource type="Texture2D" uid="uid://cilse7e4w510v" path="res://assets/Image_assets/question_scene/add_img_normal.png" id="5_1gna4"]
+[ext_resource type="Texture2D" uid="uid://775pncjld3qk" path="res://assets/Image_assets/question_scene/add_img_hover.png" id="6_ftnb7"]
+[ext_resource type="Texture2D" uid="uid://cwii5sgkdsb1q" path="res://assets/Image_assets/question_scene/start_btn_normal.png" id="7_bawhj"]
+[ext_resource type="Texture2D" uid="uid://6olvbpbqxfa" path="res://assets/Image_assets/question_scene/start_btn_hover.png" id="8_74mt8"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/general/return.png" id="10_okaxy"]
+[ext_resource type="Texture2D" uid="uid://g244t00ed0bl" path="res://assets/Image_assets/general/return_hover.png" id="11_3vr87"]
+
+[node name="question_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo3ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.14902, 0.196078, 1)
+
+[node name="question_contain" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.335
+anchor_right = 0.815
+anchor_bottom = 1.0
+offset_left = -0.0559998
+offset_top = -0.0800018
+offset_right = 0.119934
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_200cx")
+
+[node name="vbox_ques" type="VBoxContainer" parent="question_contain"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+script = ExtResource("3_okaxy")
+
+[node name="card_btn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.877
+anchor_top = 0.779
+anchor_right = 0.988
+anchor_bottom = 0.977
+offset_left = -0.304016
+offset_top = 0.207977
+offset_right = -0.176025
+offset_bottom = -0.0960083
+texture_normal = ExtResource("3_t5dcu")
+texture_hover = ExtResource("4_1gna4")
+
+[node name="img_btn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.877
+anchor_top = 0.528
+anchor_right = 0.986
+anchor_bottom = 0.725
+offset_left = -2.30402
+offset_top = -0.144012
+offset_right = 0.12793
+offset_bottom = 0.199982
+texture_normal = ExtResource("5_1gna4")
+texture_hover = ExtResource("6_ftnb7")
+
+[node name="start_btn" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_left = 0.013
+anchor_top = 0.789
+anchor_right = 0.124
+anchor_bottom = 0.986
+offset_left = 0.0240002
+offset_top = -0.272034
+offset_right = 0.151993
+offset_bottom = 0.0719604
+texture_normal = ExtResource("7_bawhj")
+texture_hover = ExtResource("8_74mt8")
+
+[node name="return_btn" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_top = 0.003
+anchor_right = 0.075
+anchor_bottom = 0.128
+offset_left = -2.0
+offset_top = 0.056
+offset_right = 39.6
+offset_bottom = 47.056
+scale = Vector2(0.695, 0.695)
+texture_normal = ExtResource("10_okaxy")
+texture_hover = ExtResource("11_3vr87")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.065
+anchor_right = 0.977
+anchor_bottom = 0.184
+offset_left = 39.528
+offset_top = 7.88
+offset_right = 14.496
+offset_bottom = 7.76799
+
+[node name="minutes" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.432
+anchor_bottom = 0.974
+offset_left = 23.0
+offset_top = -2.0
+offset_right = -0.0400009
+offset_bottom = 0.0019989
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="colon" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.383
+anchor_right = 0.568
+anchor_bottom = 1.0
+offset_left = -13.26
+offset_top = -5.0
+offset_right = 18.04
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="second" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.559
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0199966
+offset_top = -3.0
+offset_right = -25.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="increment_minute" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.864
+anchor_top = 0.043
+anchor_right = 0.864
+anchor_bottom = 0.043
+offset_left = -24.328
+offset_top = -17.864
+offset_right = 23.672
+offset_bottom = 18.136
+text = "inc"
+
+[node name="increment_seconds" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.946
+anchor_top = 0.043
+anchor_right = 0.946
+anchor_bottom = 0.043
+offset_left = -28.792
+offset_top = -17.864
+offset_right = 19.208
+offset_bottom = 18.136
+text = "inc"
+
+[node name="decrement_minute" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.863
+anchor_top = 0.227
+anchor_right = 0.863
+anchor_bottom = 0.227
+offset_left = -24.176
+offset_top = -18.096
+offset_right = 23.824
+offset_bottom = 17.904
+text = "dec"
+
+[node name="decrement_seconds" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.945
+anchor_top = 0.233
+anchor_right = 0.948
+anchor_bottom = 0.233
+offset_left = -25.64
+offset_top = -19.984
+offset_right = 18.9039
+offset_bottom = 16.016
+text = "dec"
+
+[node name="notice_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.309
+anchor_top = 0.179
+anchor_right = 0.701
+anchor_bottom = 0.242
+offset_left = -17.968
+offset_top = 0.00799561
+offset_right = -10.5521
+offset_bottom = 0.18399
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[connection signal="pressed" from="card_btn" to="." method="_on_card_btn_pressed"]
+[connection signal="pressed" from="img_btn" to="." method="_on_img_btn_pressed"]
+[connection signal="pressed" from="start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="return_btn" to="." method="_on_return_btn_pressed"]
+[connection signal="pressed" from="increment_minute" to="." method="_on_increment_minute_pressed"]
+[connection signal="pressed" from="increment_seconds" to="." method="_on_increment_seconds_pressed"]
+[connection signal="pressed" from="decrement_minute" to="." method="_on_decrement_minute_pressed"]
+[connection signal="pressed" from="decrement_seconds" to="." method="_on_decrement_seconds_pressed"]

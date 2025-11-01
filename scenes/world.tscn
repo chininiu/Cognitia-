@@ -1,0 +1,977 @@
+[gd_scene load_steps=40 format=3 uid="uid://bmixp54qdeo02"]
+
+[ext_resource type="PackedScene" uid="uid://c8muht1ic5l6s" path="res://scenes/character.tscn" id="1_dk2yt"]
+[ext_resource type="Script" uid="uid://b1ewvcd2shxmr" path="res://scripts/world.gd" id="1_wi4go"]
+[ext_resource type="Texture2D" uid="uid://b1h13nt61mp6g" path="res://assets/Image_assets/display/cursed.png" id="2_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://cobcw7drb3q1j" path="res://scenes/Timer.tscn" id="3_1wflh"]
+[ext_resource type="Texture2D" uid="uid://dybrix4bumijj" path="res://assets/Image_assets/display/correct_logo.png" id="3_qfnet"]
+[ext_resource type="Texture2D" uid="uid://5afpk1lwkl21" path="res://assets/Image_assets/display/wrong_logo.png" id="4_i7141"]
+[ext_resource type="Texture2D" uid="uid://mkmwhf3a84gw" path="res://assets/Image_assets/sprites/wall1.png" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://bmvjngprxufly" path="res://scripts/tile_map_layer.gd" id="5_71j4m"]
+[ext_resource type="Texture2D" uid="uid://c8jmdt0vsy5u8" path="res://assets/Image_assets/buttons/question_symbol.png" id="6_dss4m"]
+[ext_resource type="Texture2D" uid="uid://bh370p613mf5" path="res://assets/Image_assets/buttons/Skill_1_God'sEye.png" id="6_lakw3"]
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/buttons/themes_buttons.png" id="9_7r4gi"]
+[ext_resource type="Texture2D" uid="uid://cllhjjtschhgi" path="res://assets/Image_assets/display/correct_emoji.png" id="9_o8fc1"]
+[ext_resource type="Shader" uid="uid://y40jj7ua3gl4" path="res://shaders/colorrect_blur.gdshader" id="9_q5onr"]
+[ext_resource type="FontFile" uid="uid://pojwrv6xikyl" path="res://assets/fonts/PixelOperator.ttf" id="10_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://c0uwng6fmeciy" path="res://assets/Image_assets/display/wrong_emoji.png" id="10_xo05s"]
+[ext_resource type="StyleBox" uid="uid://dmgl6h1sihyyo" path="res://assets/GUI RESOURCES/hover_button_line.tres" id="11_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://dab8b2purg57y" path="res://assets/Image_assets/buttons/settings.png" id="12_dss4m"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="13_jhx03"]
+
+[sub_resource type="Animation" id="Animation_pm21f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:drag_horizontal_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:drag_vertical_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:drag_left_margin")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.89]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:drag_top_margin")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_lakw3"]
+resource_name = "pan_in_cam"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:drag_horizontal_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:drag_vertical_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:drag_left_margin")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.89, 0.2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:drag_top_margin")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lf6f"]
+_data = {
+&"RESET": SubResource("Animation_pm21f"),
+&"pan_in_cam": SubResource("Animation_lakw3")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
+texture = ExtResource("4_k0juu")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/animation_columns = 5
+0:0/animation_frame_0/duration = 0.2
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 0.2
+0:0/animation_frame_4/duration = 2.0
+0:0/0 = 0
+0:0/0/z_index = 1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+2:2/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:3/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+5:5/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qfnet"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_71j4m")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q232i"]
+size = Vector2(160, 160)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lakw3"]
+bg_color = Color(0.195555, 0.238307, 0.415219, 1)
+border_width_left = 10
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0516944, 0.0447197, 0.310195, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Animation" id="Animation_o8fc1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%result_label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%result_label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jhx03"]
+resource_name = "result_label_pan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%result_label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.34151, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%result_label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xo05s"]
+_data = {
+&"RESET": SubResource("Animation_o8fc1"),
+&"result_label_pan": SubResource("Animation_jhx03")
+}
+
+[sub_resource type="Animation" id="Animation_dss4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../correct_emoji:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../correct_emoji:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(75, 504.84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../correct_emoji:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../correct_emoji:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(841, 463)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:process_mode")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_xo05s"]
+resource_name = "animate_right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../correct_emoji:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.0412346),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../correct_emoji:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(75, 504.84), Vector2(75, 200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../correct_emoji:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.00929068),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../correct_emoji:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_7t5mc"]
+resource_name = "animate_wrong"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(841, 463), Vector2(841, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t5mc"]
+_data = {
+&"RESET": SubResource("Animation_dss4m"),
+&"animate_right": SubResource("Animation_xo05s"),
+&"animate_wrong": SubResource("Animation_7t5mc")
+}
+
+[sub_resource type="Theme" id="Theme_jhx03"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jhx03"]
+shader = ExtResource("9_q5onr")
+shader_parameter/lod = 2.125
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3hyu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5onr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7kh3"]
+bg_color = Color(0.270588, 0.243137, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhx03"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_xo05s"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("10_w7kh3")
+Button/styles/disabled = SubResource("StyleBoxFlat_e3hyu")
+Button/styles/focus = ExtResource("11_e3hyu")
+Button/styles/hover = SubResource("StyleBoxFlat_q5onr")
+Button/styles/normal = SubResource("StyleBoxFlat_w7kh3")
+Button/styles/pressed = SubResource("StyleBoxFlat_jhx03")
+
+[node name="world" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wi4go")
+
+[node name="blind" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 4
+layer = 0
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="blind"]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.67451)
+
+[node name="cursed_display" type="TextureRect" parent="blind"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -328.0
+offset_right = -106.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.815, 2.815)
+texture = ExtResource("2_7t5mc")
+
+[node name="background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 2.45605
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.369698, 0.349864, 0.457274, 1)
+
+[node name="camera" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CharacterBody2D/Camera")
+libraries = {
+&"": SubResource("AnimationLibrary_2lf6f")
+}
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(2, 0)
+tile_set = SubResource("TileSet_qfnet")
+script = ExtResource("5_71j4m")
+
+[node name="spawn_area_shape" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="spawner_area" type="CollisionShape2D" parent="spawn_area_shape"]
+unique_name_in_owner = true
+position = Vector2(80, 80)
+shape = SubResource("RectangleShape2D_q232i")
+debug_color = Color(0.396078, 0.588235, 0.439216, 0.231373)
+
+[node name="orbs_container" type="Node2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+y_sort_enabled = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_dk2yt")]
+unique_name_in_owner = true
+process_mode = 4
+z_index = 1
+position = Vector2(10, 10)
+floor_stop_on_slope = false
+
+[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+position = Vector2(-1, -8.5)
+zoom = Vector2(0.5, 0.5)
+drag_horizontal_offset = 1.0
+drag_vertical_offset = 1.0
+drag_left_margin = 0.89
+drag_top_margin = 1.0
+
+[node name="Skills" type="CanvasLayer" parent="CharacterBody2D/Camera"]
+
+[node name="skill_container" type="Panel" parent="CharacterBody2D/Camera/Skills"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.971
+anchor_top = 0.287
+anchor_right = 0.971
+anchor_bottom = 0.287
+offset_left = 81.408
+offset_top = -67.976
+offset_right = 235.408
+offset_bottom = 68.024
+theme_override_styles/panel = SubResource("StyleBoxFlat_lakw3")
+
+[node name="skill_display" type="TextureRect" parent="CharacterBody2D/Camera/Skills/skill_container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.414
+anchor_top = 0.406
+anchor_right = 0.414
+anchor_bottom = 0.406
+offset_left = -39.406
+offset_top = -39.434
+offset_right = 354.594
+offset_bottom = 355.566
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_lakw3")
+
+[node name="Label" type="Label" parent="CharacterBody2D/Camera/Skills/skill_container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 22.5
+offset_right = 7.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI" type="CanvasLayer" parent="CharacterBody2D/Camera"]
+
+[node name="animation_result" type="AnimationPlayer" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_xo05s")
+}
+
+[node name="animation_emote" type="AnimationPlayer" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+process_mode = 3
+root_node = NodePath("../wrong_emoji")
+libraries = {
+&"": SubResource("AnimationLibrary_7t5mc")
+}
+
+[node name="skill_depleted" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.264
+anchor_right = 0.5
+anchor_bottom = 0.264
+offset_left = -168.0
+offset_top = -31.072
+offset_right = 160.0
+offset_bottom = 30.928
+grow_horizontal = 2
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 61
+text = "Skill depleted"
+
+[node name="interact_label" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+offset_left = 373.0
+offset_top = 552.0
+offset_right = 1266.0
+offset_bottom = 677.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("13_jhx03")
+theme_override_font_sizes/font_size = 61
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="no_orbs_text" type="TextureRect" parent="CharacterBody2D/Camera/UI"]
+anchors_preset = -1
+anchor_left = 0.932
+anchor_top = 0.08
+anchor_right = 0.932
+anchor_bottom = 0.08
+offset_left = -63.6641
+offset_top = -63.84
+offset_right = 64.3359
+offset_bottom = 64.16
+texture = ExtResource("6_dss4m")
+
+[node name="no_orbs_dis" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.07
+anchor_right = 0.98
+anchor_bottom = 0.07
+offset_left = -259.96
+offset_top = -45.36
+offset_right = 11.04
+offset_bottom = 136.64
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 181
+text = "0"
+horizontal_alignment = 2
+
+[node name="correct_logo" type="TextureRect" parent="CharacterBody2D/Camera/UI"]
+anchors_preset = -1
+anchor_left = 0.965
+anchor_top = 0.91
+anchor_right = 0.965
+anchor_bottom = 0.91
+offset_left = -31.6801
+offset_top = -31.68
+offset_right = 96.3199
+offset_bottom = 96.32
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_qfnet")
+
+[node name="no_correct" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.899
+anchor_top = 0.91
+anchor_right = 0.899
+anchor_bottom = 0.91
+offset_left = -24.6481
+offset_top = -39.68
+offset_right = 25.3519
+offset_bottom = 40.32
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="wrong_logo" type="TextureRect" parent="CharacterBody2D/Camera/UI"]
+anchors_preset = -1
+anchor_left = 0.965
+anchor_top = 0.759
+anchor_right = 0.965
+anchor_bottom = 0.759
+offset_left = -31.6801
+offset_top = -31.832
+offset_right = 96.3199
+offset_bottom = 96.168
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_i7141")
+
+[node name="no_wrong" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.898
+anchor_top = 0.755
+anchor_right = 0.898
+anchor_bottom = 0.755
+offset_left = -25.4961
+offset_top = -40.24
+offset_right = 24.5039
+offset_bottom = 39.76
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="Timer" parent="CharacterBody2D/Camera/UI" instance=ExtResource("3_1wflh")]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+offset_left = 1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = 5.0
+
+[node name="correct_emoji" type="TextureRect" parent="CharacterBody2D/Camera/UI"]
+process_mode = 3
+offset_left = 75.0
+offset_top = 504.84
+offset_right = 203.0
+offset_bottom = 632.84
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(71, 62)
+texture = ExtResource("9_o8fc1")
+
+[node name="wrong_emoji" type="TextureRect" parent="CharacterBody2D/Camera/UI"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+offset_left = 841.0
+offset_top = 463.0
+offset_right = 969.0
+offset_bottom = 591.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(60.3616, 70.9318)
+texture = ExtResource("10_xo05s")
+
+[node name="result_label" type="Label" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -893.0
+offset_top = -123.0
+offset_right = 945.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(898, 138)
+theme = SubResource("Theme_jhx03")
+theme_override_colors/font_color = Color(0.838154, 0.931859, 0.963656, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("13_jhx03")
+theme_override_font_sizes/font_size = 300
+text = "RESULTS"
+horizontal_alignment = 1
+
+[node name="pop_up_question" type="CanvasLayer" parent="CharacterBody2D/Camera/UI"]
+unique_name_in_owner = true
+
+[node name="results_display" type="CanvasLayer" parent="CharacterBody2D/Camera"]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="settings" type="CanvasLayer" parent="CharacterBody2D/Camera"]
+layer = 2
+
+[node name="settings" type="TextureButton" parent="CharacterBody2D/Camera/settings"]
+process_mode = 3
+z_index = 2
+texture_filter = 2
+anchors_preset = -1
+anchor_right = 0.042
+anchor_bottom = 0.074
+offset_left = -13.0
+offset_top = -12.0
+offset_right = 298.616
+offset_bottom = 300.048
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_dss4m")
+
+[node name="setting_pop" type="CanvasLayer" parent="CharacterBody2D/Camera/settings"]
+unique_name_in_owner = true
+process_mode = 4
+layer = 3
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D/Camera/settings/setting_pop"]
+material = SubResource("ShaderMaterial_jhx03")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="setting_bg" type="NinePatchRect" parent="CharacterBody2D/Camera/settings/setting_pop"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -119.0
+offset_right = 156.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_7r4gi")
+region_rect = Rect2(160.4, 32.4, 96.989, 95.8696)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterBody2D/Camera/settings/setting_pop/setting_bg"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 34.0
+offset_right = 274.0
+offset_bottom = 211.0
+theme_override_constants/separation = 10
+
+[node name="return" type="Button" parent="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_xo05s")
+theme_override_font_sizes/font_size = 41
+text = "Main Menu"
+
+[node name="edit" type="Button" parent="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xo05s")
+theme_override_font_sizes/font_size = 41
+text = "Edit Cards"
+
+[node name="cancel" type="Button" parent="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_xo05s")
+theme_override_font_sizes/font_size = 41
+text = "Cancel"
+
+[connection signal="show_skills" from="." to="." method="_on_show_skills"]
+[connection signal="maze_finished" from="TileMapLayer" to="TileMapLayer" method="_on_maze_finished"]
+[connection signal="timesup" from="CharacterBody2D/Camera/UI/Timer" to="." method="_on_timer_timesup"]
+[connection signal="pressed" from="CharacterBody2D/Camera/settings/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer/edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Camera/settings/setting_pop/setting_bg/VBoxContainer/cancel" to="." method="_on_cancel_pressed"]

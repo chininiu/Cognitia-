@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbbksqq0udv6t"]
+
+[ext_resource type="Script" uid="uid://dfskoh2smorh8" path="res://scripts/howtoplay.gd" id="1_gleaf"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/buttons/return.png" id="2_ffhry"]
+[ext_resource type="FontFile" uid="uid://gx2d0uqsl51y" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_w0yee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wcgq"]
+bg_color = Color(0.160784, 0.14902, 0.196078, 1)
+border_width_bottom = 60
+
+[sub_resource type="Animation" id="Animation_ar45n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -750)]
+}
+
+[sub_resource type="Animation" id="Animation_8as4d"]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(0, -750), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xjnht"]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.54912, 2.54912),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -750)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0csw"]
+_data = {
+&"RESET": SubResource("Animation_ar45n"),
+&"in": SubResource("Animation_8as4d"),
+&"out": SubResource("Animation_xjnht")
+}
+
+[node name="howtoplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gleaf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -750.0
+offset_bottom = -687.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4wcgq")
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.815, 0.815)
+texture_normal = ExtResource("2_ffhry")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 60.0
+offset_right = 168.0
+offset_bottom = 122.688
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_w0yee")
+theme_override_font_sizes/font_size = 51
+text = "HOW TO PLAY?"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.294
+anchor_right = 0.95
+anchor_bottom = 0.699
+offset_left = 14.424
+offset_top = -0.0339966
+offset_right = -0.400024
+offset_bottom = 0.0109558
+theme_override_font_sizes/font_size = 46
+text = "1. Click \"play\"
+2. You can insert cards by clicking the \"+\" or image by clicking the add image button
+3. Navigate through generated maze and find your flashcards!"
+autowrap_mode = 3
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e0csw")
+}
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]

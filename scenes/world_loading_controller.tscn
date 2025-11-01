@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmq8tfwagl1x"]
+
+[ext_resource type="Script" uid="uid://djvrgfb6t34dq" path="res://scripts/world_loading_controller.gd" id="1_63d5i"]
+[ext_resource type="PackedScene" uid="uid://bmixp54qdeo02" path="res://scenes/world.tscn" id="1_ut341"]
+[ext_resource type="PackedScene" uid="uid://cib7eqq6d1j62" path="res://scenes/loadingscn.tscn" id="2_qj8tu"]
+
+[node name="WorldLoadingController" type="Node"]
+script = ExtResource("1_63d5i")
+
+[node name="world" parent="." instance=ExtResource("1_ut341")]
+unique_name_in_owner = true
+position = Vector2(10, 10)
+
+[node name="loading" parent="." instance=ExtResource("2_qj8tu")]
+unique_name_in_owner = true

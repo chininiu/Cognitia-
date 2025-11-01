@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://ca7vd0ad8rx1e"]
+
+[resource]
+TextEdit/colors/background_color = Color(0.274505, 0.246762, 0.357758, 1)
+TextEdit/colors/current_line_color = Color(0.25098, 0.25098, 0.258824, 0)
+TextEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+TextEdit/colors/search_result_color = Color(0.301961, 0.301961, 0.301961, 0)
+TextEdit/colors/selection_color = Color(0.501961, 0.501961, 0.501961, 0)

@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://bog1dvf7xodgc"]
+
+[ext_resource type="Script" uid="uid://b3gt25kxx2vjk" path="res://scripts/results.gd" id="1_qh7lt"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="2_21kdr"]
+[ext_resource type="Texture2D" uid="uid://6janxqbxd1b1" path="res://assets/Image_assets/buttons/restart.png" id="2_r4wmc"]
+
+[sub_resource type="Animation" id="Animation_s58my"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -700)]
+}
+
+[sub_resource type="Animation" id="Animation_r4wmc"]
+resource_name = "go_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.420448, 1),
+"update": 0,
+"values": [Vector2(0, -700), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6ibn"]
+_data = {
+&"RESET": SubResource("Animation_s58my"),
+&"go_down": SubResource("Animation_r4wmc")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4wmc"]
+bg_color = Color(0.368627, 0.34902, 0.458824, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_s58my"]
+Panel/styles/panel = SubResource("StyleBoxFlat_r4wmc")
+
+[node name="results" type="Control"]
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qh7lt")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w6ibn")
+}
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -700.0
+offset_right = -11.0
+offset_bottom = -700.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_s58my")
+
+[node name="restart_btn" type="TextureButton" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.947
+anchor_top = 0.894
+anchor_right = 0.947
+anchor_bottom = 0.894
+offset_left = -48.103
+offset_top = -50.312
+offset_right = 79.897
+offset_bottom = 77.688
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_r4wmc")
+
+[node name="result_percentage" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.171
+anchor_top = 0.057
+anchor_right = 0.865
+anchor_bottom = 0.358
+offset_left = -0.479004
+offset_top = 0.0639992
+offset_right = 3192.11
+offset_bottom = 780.016
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("2_21kdr")
+theme_override_font_sizes/font_size = 170
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.367
+anchor_right = 0.876
+anchor_bottom = 0.977
+offset_left = 0.119995
+offset_top = 0.18399
+offset_right = -0.524048
+offset_bottom = -0.0960083
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="result_container" type="VBoxContainer" parent="Panel/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(751, 3.365)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Panel/restart_btn" to="." method="_on_restart_btn_pressed"]

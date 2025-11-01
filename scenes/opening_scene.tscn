@@ -1,0 +1,221 @@
+[gd_scene load_steps=13 format=3 uid="uid://cllpdt06k8qk1"]
+
+[ext_resource type="Script" uid="uid://bthkthm0lc3xm" path="res://scripts/opening_scene.gd" id="1_cnewp"]
+[ext_resource type="Texture2D" uid="uid://c4roxd3eoygt8" path="res://assets/Image_assets/sprites/logo_animation_sprite.png" id="2_p4dst"]
+[ext_resource type="Texture2D" uid="uid://bglhkq7c14eyh" path="res://assets/Image_assets/sprites/title_animation.png" id="3_c26mv"]
+
+[sub_resource type="Animation" id="Animation_pter1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%text:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7s0bw"]
+resource_name = "animation_title"
+length = 1.2
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%text:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmoa6"]
+_data = {
+&"RESET": SubResource("Animation_pter1"),
+&"animation_title": SubResource("Animation_7s0bw")
+}
+
+[sub_resource type="Animation" id="Animation_ux1v5"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%animation_1/../FrontLayer:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.160784, 0.14902, 0.196078, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ako3e"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%animation_1/../FrontLayer:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.160784, 0.14902, 0.196078, 1), Color(0.160784, 0.14902, 0.196078, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8fj4"]
+_data = {
+&"RESET": SubResource("Animation_ux1v5"),
+&"fade_out": SubResource("Animation_ako3e")
+}
+
+[sub_resource type="Animation" id="Animation_afegl"]
+length = 2.0
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%text/../../FrontLayer:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.160784, 0.14902, 0.196078, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%logo:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_s6pmp"]
+resource_name = "animation_logo"
+length = 0.7
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%logo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rhpg4"]
+_data = {
+&"RESET": SubResource("Animation_afegl"),
+&"animation_logo": SubResource("Animation_s6pmp")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cnewp")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.14902, 0.196078, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="logo" type="Sprite2D" parent="CenterContainer"]
+unique_name_in_owner = true
+position = Vector2(-17.98, -97)
+scale = Vector2(6, 6)
+texture = ExtResource("2_p4dst")
+hframes = 2
+vframes = 2
+
+[node name="text" type="Sprite2D" parent="CenterContainer"]
+unique_name_in_owner = true
+position = Vector2(-19, 49)
+scale = Vector2(6, 6)
+texture = ExtResource("3_c26mv")
+hframes = 5
+
+[node name="FrontLayer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.14902, 0.196078, 1)
+
+[node name="animation_3" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../animation_2")
+libraries = {
+&"": SubResource("AnimationLibrary_lmoa6")
+}
+
+[node name="animation_2" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../animation_1")
+libraries = {
+&"": SubResource("AnimationLibrary_v8fj4")
+}
+
+[node name="animation_1" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../CenterContainer/text")
+libraries = {
+&"": SubResource("AnimationLibrary_rhpg4")
+}
+speed_scale = 0.92

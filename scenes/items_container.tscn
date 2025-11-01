@@ -1,0 +1,1512 @@
+[gd_scene load_steps=36 format=3 uid="uid://dco8jhm6s7jgy"]
+
+[ext_resource type="Texture2D" uid="uid://op0vp0fi7260" path="res://assets/Image_assets/buttons/skin.png" id="1_fek8d"]
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/buttons/themes_buttons.png" id="1_frh6d"]
+[ext_resource type="Script" uid="uid://mgbbtamaagu0" path="res://scripts/items_container.gd" id="1_w0e5x"]
+[ext_resource type="Texture2D" uid="uid://comikc4bs0fg3" path="res://assets/Image_assets/buttons/skills.png" id="2_8elcj"]
+[ext_resource type="PackedScene" uid="uid://c1p064vo73cv" path="res://scenes/items.tscn" id="2_ligj7"]
+[ext_resource type="Texture2D" uid="uid://c710sn4j05wcw" path="res://assets/Image_assets/buttons/tools.png" id="3_2pklf"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="3_fceus"]
+[ext_resource type="Texture2D" uid="uid://bh370p613mf5" path="res://assets/Image_assets/buttons/Skill_1_God'sEye.png" id="3_ligj7"]
+[ext_resource type="FontFile" uid="uid://gx2d0uqsl51y" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="4_mnj6j"]
+[ext_resource type="Texture2D" uid="uid://cspkqw23b3rm8" path="res://assets/Image_assets/buttons/Skill_2_Barrier.png" id="5_tpaky"]
+[ext_resource type="Texture2D" uid="uid://dem53aeseu4p1" path="res://assets/Image_assets/display/currency.png" id="6_30xp7"]
+[ext_resource type="StyleBox" uid="uid://qekhvork24j5" path="res://assets/GUI RESOURCES/main_menu_ui.hover.tres" id="6_epc74"]
+[ext_resource type="StyleBox" uid="uid://bifmme4lln7t4" path="res://assets/GUI RESOURCES/main_menu_ui.theme.tres" id="7_28bwg"]
+[ext_resource type="Texture2D" uid="uid://bj1idv1hytkvo" path="res://assets/Image_assets/buttons/Skill_4_SeaSide.png" id="7_v3cig"]
+[ext_resource type="StyleBox" uid="uid://bw78khciulhio" path="res://assets/GUI RESOURCES/main_menu_ui_pressed.tres" id="8_fek8d"]
+[ext_resource type="Texture2D" uid="uid://bdoyhjhwl0f3f" path="res://assets/Image_assets/buttons/Skill_3_BootsofHermes.png" id="11_epc74"]
+[ext_resource type="Texture2D" uid="uid://dm84thnfh1k75" path="res://assets/Image_assets/sprites/customized_head_accessories.png" id="17_eg46m"]
+[ext_resource type="Texture2D" uid="uid://n68ver37wbql" path="res://assets/Image_assets/buttons/hint_button.png" id="17_maa8k"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/buttons/return.png" id="19_eg46m"]
+[ext_resource type="Texture2D" uid="uid://g244t00ed0bl" path="res://assets/Image_assets/buttons/return_hover.png" id="20_cqjm7"]
+
+[sub_resource type="Animation" id="Animation_mlkvx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_skills:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(39, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_skills:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("total_currency:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1046, 598)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("currency_texture:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1105, 601)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skill_button:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1010, 12)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("characters:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(980, 165)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("tools:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(980, 331)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NinePatchRect:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65, -25)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("return_button:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_136qx"]
+resource_name = "character_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_skins:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.466516, 0.125),
+"update": 0,
+"values": [Vector2(-1000, 36), Vector2(32, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_skins:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.466516),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_skins:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.466516),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cqjm7"]
+resource_name = "character_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_skins:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(0.133972, 0.133972),
+"update": 0,
+"values": [Vector2(39, 36), Vector2(-1000, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_skins:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(0.133972),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_skins:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(0.133972),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_bcw5i"]
+resource_name = "in_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("total_currency:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 598), Vector2(1046, 598)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("currency_texture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 601), Vector2(1105, 601)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("skill_button:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 12), Vector2(1010, 12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("characters:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 165), Vector2(980, 165)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tools:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 331), Vector2(980, 331)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NinePatchRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, -25), Vector2(65, -25)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("return_button:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 0.329877),
+"update": 0,
+"values": [Vector2(-1000, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ttsso"]
+resource_name = "out_anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("total_currency:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(1046, 598), Vector2(-1000, 598)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("currency_texture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(1105, 601), Vector2(-1000, 601)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("skill_button:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(1010, 12), Vector2(-1000, 12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("characters:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(980, 165), Vector2(-1000, 165)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tools:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(980, 331), Vector2(-1000, 331)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NinePatchRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(65, -25), Vector2(-1000, -25)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("return_button:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eg46m"]
+resource_name = "skills_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_skills:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(-1000, 36), Vector2(39, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_skills:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.267943),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_skills:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.267943),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_w0e5x"]
+resource_name = "skills_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_skills:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.0883886, 0.0883886),
+"update": 0,
+"values": [Vector2(39, 36), Vector2(-1000, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_skills:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.0883886, 0.0883886),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_skills:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(0.125),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_rr0kp"]
+resource_name = "tools_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_items:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.307786, 0.125),
+"update": 0,
+"values": [Vector2(-1000, 36), Vector2(32, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_items:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.307786),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_items:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.307786),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_x07xc"]
+resource_name = "tools_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Scroll_items:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.287175, 0.287175),
+"update": 0,
+"values": [Vector2(39, 36), Vector2(-1000, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect/Scroll_items:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(0.287175),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect/Scroll_items:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(0.287175),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eg46m"]
+_data = {
+&"RESET": SubResource("Animation_mlkvx"),
+&"character_in": SubResource("Animation_136qx"),
+&"character_out": SubResource("Animation_cqjm7"),
+&"in_animation": SubResource("Animation_bcw5i"),
+&"out_anim": SubResource("Animation_ttsso"),
+&"skills_in": SubResource("Animation_eg46m"),
+&"skills_out": SubResource("Animation_w0e5x"),
+&"tools_in": SubResource("Animation_rr0kp"),
+&"tools_out": SubResource("Animation_x07xc")
+}
+
+[sub_resource type="Theme" id="Theme_8elcj"]
+Button/styles/hover = ExtResource("6_epc74")
+Button/styles/normal = ExtResource("7_28bwg")
+Button/styles/pressed = ExtResource("8_fek8d")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqjm7"]
+atlas = ExtResource("17_eg46m")
+region = Rect2(0, 0, 31.3911, 26.0791)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_136qx"]
+atlas = ExtResource("17_eg46m")
+region = Rect2(32.8465, 0, 29.2308, 20.0257)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x07xc"]
+atlas = ExtResource("17_eg46m")
+region = Rect2(63.8945, 0, 36.3605, 23.2171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr0kp"]
+atlas = ExtResource("17_eg46m")
+region = Rect2(11.6866, 22.67, 21.2216, 49.517)
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_w0e5x")
+
+[node name="click_animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_eg46m")
+}
+
+[node name="total_currency" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.955
+anchor_right = 0.931
+anchor_bottom = 0.955
+offset_left = -26.512
+offset_top = -20.84
+offset_right = 27.488
+offset_bottom = 21.16
+theme_override_font_sizes/font_size = 41
+text = "0"
+horizontal_alignment = 2
+
+[node name="currency_texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.976
+anchor_top = 0.957
+anchor_right = 0.976
+anchor_bottom = 0.957
+offset_left = -19.3521
+offset_top = -19.136
+offset_right = 108.648
+offset_bottom = 108.864
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="skill_button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 434.0
+offset_top = -312.0
+offset_right = 562.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_fek8d")
+
+[node name="characters" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 980.0
+offset_top = 165.0
+offset_right = 1108.0
+offset_bottom = 293.0
+texture_normal = ExtResource("2_8elcj")
+
+[node name="tools" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 980.0
+offset_top = 331.0
+offset_right = 1108.0
+offset_bottom = 459.0
+texture_normal = ExtResource("3_2pklf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.317
+anchor_right = 0.5
+anchor_bottom = 0.317
+offset_left = -511.0
+offset_top = -230.416
+offset_right = 457.0
+offset_bottom = 456.584
+texture = ExtResource("1_frh6d")
+region_rect = Rect2(161.235, 31.723, 95.981, 96.1844)
+
+[node name="Scroll_skills" type="ScrollContainer" parent="NinePatchRect"]
+visibility_layer = 129
+clip_contents = false
+layout_mode = 2
+anchor_left = 0.51
+anchor_top = 0.5
+anchor_right = 0.51
+anchor_bottom = 0.5
+offset_left = -454.68
+offset_top = -307.5
+offset_right = 455.32
+offset_bottom = 331.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skills" type="VBoxContainer" parent="NinePatchRect/Scroll_skills"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Scroll_skills/skills"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fceus")
+theme_override_font_sizes/font_size = 40
+text = "SKILLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Skill_1" parent="NinePatchRect/Scroll_skills/skills" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="Skill Name" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "GOD'S EYE"
+
+[node name="descrption" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.257
+anchor_right = 0.971
+anchor_bottom = 0.723
+offset_left = -0.299988
+offset_top = -0.0999985
+offset_right = 0.0999146
+offset_bottom = 0.0999908
+theme_override_font_sizes/font_size = 35
+text = "An eye given by the god! 
+It let users expand their current vision by 5x in 10 seconds."
+autowrap_mode = 3
+
+[node name="skill_image" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = ExtResource("3_ligj7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "50"
+
+[node name="buy_1" type="Button" parent="NinePatchRect/Scroll_skills/skills/Skill_1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Skill_2" parent="NinePatchRect/Scroll_skills/skills" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="Skill Name" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "HOLY BARRIER"
+
+[node name="descrption" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.257
+anchor_right = 0.971
+anchor_bottom = 0.767
+offset_left = -0.299988
+offset_top = -0.0999985
+offset_right = 0.0999146
+offset_bottom = -13.1
+theme_override_font_sizes/font_size = 35
+text = "Demon, go away!
+A strong barrier that last for a minute. It negates the curse when user made a mistake."
+autowrap_mode = 3
+
+[node name="skill_image" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = ExtResource("5_tpaky")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "25"
+
+[node name="buy_2" type="Button" parent="NinePatchRect/Scroll_skills/skills/Skill_2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Skill_3" parent="NinePatchRect/Scroll_skills/skills" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="Skill Name" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "ANGEL BOOTS"
+
+[node name="descrption" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.257
+anchor_right = 0.971
+anchor_bottom = 0.723
+offset_left = -0.299988
+offset_top = -0.0999985
+offset_right = 0.0999146
+offset_bottom = 0.0999908
+theme_override_font_sizes/font_size = 35
+text = "Boots given by an Angel!
+A lightweight  boots that let user move faster for 20 seconds"
+autowrap_mode = 3
+
+[node name="skill_image" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = ExtResource("11_epc74")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "25"
+
+[node name="buy_3" type="Button" parent="NinePatchRect/Scroll_skills/skills/Skill_3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Skill_4" parent="NinePatchRect/Scroll_skills/skills" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="Skill Name" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "VACATION"
+
+[node name="descrption" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.257
+anchor_right = 0.994
+anchor_bottom = 0.767
+offset_left = -0.299988
+offset_top = -0.0999985
+offset_right = 0.399963
+offset_bottom = -0.100006
+theme_override_font_sizes/font_size = 35
+text = "Vacation mode!!
+It teleports the user somewhere else. it also summon Cognitia in Vacation mode!"
+autowrap_mode = 3
+
+[node name="skill_image" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = ExtResource("7_v3cig")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "30"
+
+[node name="buy_4" type="Button" parent="NinePatchRect/Scroll_skills/skills/Skill_4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Scroll_skins" type="ScrollContainer" parent="NinePatchRect"]
+process_mode = 4
+visible = false
+clip_contents = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1484.0
+offset_top = -314.5
+offset_right = -574.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skins" type="VBoxContainer" parent="NinePatchRect/Scroll_skins"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Scroll_skins/skins"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fceus")
+theme_override_font_sizes/font_size = 40
+text = "Accessories"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Accesso_1" parent="NinePatchRect/Scroll_skins/skins" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="name_1" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "Demon's  Horn"
+
+[node name="label_1" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 874.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 35
+text = "Horns extracted from the demon's cursed"
+autowrap_mode = 3
+
+[node name="acceso_image_1" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = SubResource("AtlasTexture_cqjm7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="A_currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "45"
+
+[node name="buy_1_Acess" type="Button" parent="NinePatchRect/Scroll_skins/skins/Accesso_1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Accesso_2" parent="NinePatchRect/Scroll_skins/skins" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="name_2" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "Angel's  Dress"
+
+[node name="label_2" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 874.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 35
+text = "An accesory fallen from the realm of immortals"
+autowrap_mode = 3
+
+[node name="acceso_image_2" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = SubResource("AtlasTexture_136qx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="A_currency_1" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "45"
+
+[node name="buy_2_Access" type="Button" parent="NinePatchRect/Scroll_skins/skins/Accesso_2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Accesso_3" parent="NinePatchRect/Scroll_skins/skins" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="name" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "THOUGHTS"
+
+[node name="label" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 874.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 35
+text = "Thoughts"
+autowrap_mode = 3
+
+[node name="acceso_image" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = SubResource("AtlasTexture_x07xc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "25"
+
+[node name="buy_3_Access" type="Button" parent="NinePatchRect/Scroll_skins/skins/Accesso_3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Accesso_4" parent="NinePatchRect/Scroll_skins/skins" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="name" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "COMPLEMENTARY"
+
+[node name="label" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 874.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 35
+text = "Red and Blue"
+autowrap_mode = 3
+
+[node name="acceso_image" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = SubResource("AtlasTexture_rr0kp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency" type="TextureRect" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "50"
+
+[node name="buy_4_Access" type="Button" parent="NinePatchRect/Scroll_skins/skins/Accesso_4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="Scroll_items" type="ScrollContainer" parent="NinePatchRect"]
+process_mode = 4
+visible = false
+clip_contents = false
+layout_mode = 2
+anchor_left = 0.503
+anchor_top = 0.5
+anchor_right = 0.503
+anchor_bottom = 0.5
+offset_left = -447.904
+offset_top = -330.5
+offset_right = 462.092
+offset_bottom = 302.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tools" type="VBoxContainer" parent="NinePatchRect/Scroll_items"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Scroll_items/tools"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fceus")
+theme_override_font_sizes/font_size = 40
+text = "TOOLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Skill_1" parent="NinePatchRect/Scroll_items/tools" instance=ExtResource("2_ligj7")]
+layout_mode = 2
+
+[node name="Skill Name" type="Label" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 18.0
+offset_right = 990.0
+offset_bottom = 202.375
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("4_mnj6j")
+theme_override_font_sizes/font_size = 150
+text = "HINT"
+
+[node name="descrption" type="Label" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 77.0
+offset_right = 874.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 35
+text = "Lets user see through the answer"
+autowrap_mode = 3
+
+[node name="skill_image" type="TextureRect" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.067
+anchor_right = 0.289
+anchor_bottom = 0.773
+offset_left = 2.3
+offset_top = -2.1
+offset_right = 1.89999
+offset_bottom = -1.90002
+texture = ExtResource("17_maa8k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="currency_1" type="TextureRect" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.874
+anchor_right = 0.868
+anchor_bottom = 0.874
+offset_left = -19.2
+offset_top = -19.2
+offset_right = 108.8
+offset_bottom = 108.8
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_30xp7")
+
+[node name="price" type="Label" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 238.0
+offset_right = 856.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 46
+text = "10"
+
+[node name="buy_tool_1" type="Button" parent="NinePatchRect/Scroll_items/tools/Skill_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.872
+anchor_right = 0.177
+anchor_bottom = 0.872
+offset_left = -83.3
+offset_top = -23.6
+offset_right = 82.7
+offset_bottom = 23.4
+theme = SubResource("Theme_8elcj")
+theme_override_font_sizes/font_size = 30
+text = "Buy"
+
+[node name="return_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("19_eg46m")
+texture_hover = ExtResource("20_cqjm7")
+
+[connection signal="pressed" from="skill_button" to="." method="_on_skill_button_pressed"]
+[connection signal="pressed" from="characters" to="." method="_on_characters_pressed"]
+[connection signal="pressed" from="tools" to="." method="_on_tools_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skills/skills/Skill_1/buy_1" to="." method="_on_buy_1_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skills/skills/Skill_2/buy_2" to="." method="_on_buy_2_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skills/skills/Skill_3/buy_3" to="." method="_on_buy_3_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skills/skills/Skill_4/buy_4" to="." method="_on_buy_4_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skins/skins/Accesso_1/buy_1_Acess" to="." method="_on_buy_1_acess_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skins/skins/Accesso_2/buy_2_Access" to="." method="_on_buy_2_access_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skins/skins/Accesso_3/buy_3_Access" to="." method="_on_buy_3_access_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_skins/skins/Accesso_4/buy_4_Access" to="." method="_on_buy_4_access_pressed"]
+[connection signal="pressed" from="NinePatchRect/Scroll_items/tools/Skill_1/buy_tool_1" to="." method="_on_buy_tool_1_pressed"]
+[connection signal="pressed" from="return_button" to="." method="_on_return_button_pressed"]

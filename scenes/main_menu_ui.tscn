@@ -1,0 +1,920 @@
+[gd_scene load_steps=38 format=3 uid="uid://d3u4l018capmn"]
+
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/buttons/themes_buttons.png" id="1_rayio"]
+[ext_resource type="Script" uid="uid://whw8pbn8y35n" path="res://scripts/main_menu_ui.gd" id="1_vxllw"]
+[ext_resource type="StyleBox" uid="uid://bifmme4lln7t4" path="res://assets/GUI RESOURCES/main_menu_ui.theme.tres" id="2_4pl3l"]
+[ext_resource type="StyleBox" uid="uid://co8ox7cb8u04l" path="res://assets/GUI RESOURCES/settings_hover.tres" id="2_j5441"]
+[ext_resource type="Texture2D" uid="uid://bglhkq7c14eyh" path="res://assets/Image_assets/sprites/title_animation.png" id="2_qooff"]
+[ext_resource type="StyleBox" uid="uid://qekhvork24j5" path="res://assets/GUI RESOURCES/main_menu_ui.hover.tres" id="2_rpghy"]
+[ext_resource type="StyleBox" uid="uid://bw78khciulhio" path="res://assets/GUI RESOURCES/main_menu_ui_pressed.tres" id="4_towyk"]
+[ext_resource type="Texture2D" uid="uid://c4roxd3eoygt8" path="res://assets/Image_assets/sprites/logo_animation_sprite.png" id="7_np0fa"]
+[ext_resource type="Texture2D" uid="uid://dj4cleevclsxv" path="res://assets/Image_assets/buttons/return.png" id="10_lju1q"]
+[ext_resource type="Texture2D" uid="uid://c7w5n73367lb3" path="res://assets/Image_assets/display/QR_maze_texture.png" id="10_mtm5c"]
+[ext_resource type="Texture2D" uid="uid://c1idyf6cn4on7" path="res://assets/Image_assets/buttons/how_to_play.png" id="10_wsifg"]
+[ext_resource type="Texture2D" uid="uid://dac2lp78cimbe" path="res://assets/Image_assets/buttons/shop.png" id="10_xife4"]
+[ext_resource type="Texture2D" uid="uid://dsh6otummu4cv" path="res://assets/Image_assets/display/QR_maze_hover.png" id="11_73ijk"]
+[ext_resource type="Texture2D" uid="uid://g244t00ed0bl" path="res://assets/Image_assets/buttons/return_hover.png" id="11_bet7a"]
+[ext_resource type="Texture2D" uid="uid://bievi37kb2iy0" path="res://assets/Image_assets/display/linear_maze_texture.png" id="11_sbo6t"]
+[ext_resource type="FontFile" uid="uid://gx2d0uqsl51y" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="11_wsifg"]
+[ext_resource type="Texture2D" uid="uid://c573nolwqh1gm" path="res://assets/Image_assets/display/linear_maze_hover.png" id="12_5tirf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5441"]
+
+[sub_resource type="Theme" id="Theme_vxllw"]
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_j5441")
+CheckButton/styles/hover = ExtResource("2_j5441")
+
+[sub_resource type="Theme" id="Theme_j5441"]
+CheckButton/styles/hover = ExtResource("2_j5441")
+
+[sub_resource type="Theme" id="Theme_qooff"]
+Button/styles/hover = ExtResource("2_rpghy")
+Button/styles/normal = ExtResource("2_4pl3l")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpghy"]
+
+[sub_resource type="Theme" id="Theme_4pl3l"]
+Button/font_sizes/font_size = 64
+Button/styles/focus = SubResource("StyleBoxEmpty_rpghy")
+Button/styles/hover = ExtResource("2_rpghy")
+Button/styles/normal = ExtResource("2_4pl3l")
+Button/styles/pressed = ExtResource("4_towyk")
+
+[sub_resource type="Animation" id="Animation_73ijk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title_logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(344.5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("menu:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 306), Vector2(344.5, 306)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("maze_options:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(97, -600)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("maze_options:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("shop:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-400, 453)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("settings:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(287, 800)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("how_to_play:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 477)]
+}
+
+[sub_resource type="Animation" id="Animation_4caof"]
+resource_name = "mazeD_hide"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("maze_options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1.68179, 1),
+"update": 0,
+"values": [Vector2(97, 48), Vector2(97, -600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("maze_options:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wsifg"]
+resource_name = "mazeD_show"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("maze_options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 0.435275),
+"update": 0,
+"values": [Vector2(97, -600), Vector2(97, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("maze_options:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bet7a"]
+resource_name = "option_hide"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(346, 306), Vector2(-600, 306)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title_logo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(344.5, 0), Vector2(-500, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("title_logo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("shop:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27, 453), Vector2(-200, 453)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("how_to_play:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1060, 3), Vector2(1200, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_xife4"]
+resource_name = "option_show"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title_logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 0), Vector2(344.5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("menu:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 306), Vector2(344.5, 306)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("shop:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.59),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-400, 453), Vector2(27, 453)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("how_to_play:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1197, 3.00003), Vector2(1060, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_mtm5c"]
+resource_name = "setting_show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("settings:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.535887, 0.535887),
+"update": 0,
+"values": [Vector2(287, 800), Vector2(287, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("settings:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lju1q"]
+resource_name = "settings_hide"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("settings:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1.56917, 1),
+"update": 0,
+"values": [Vector2(287, 100), Vector2(287, 800)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("settings:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lju1q"]
+_data = {
+&"RESET": SubResource("Animation_73ijk"),
+&"mazeD_hide": SubResource("Animation_4caof"),
+&"mazeD_show": SubResource("Animation_wsifg"),
+&"option_hide": SubResource("Animation_bet7a"),
+&"option_show": SubResource("Animation_xife4"),
+&"setting_show": SubResource("Animation_mtm5c"),
+&"settings_hide": SubResource("Animation_lju1q")
+}
+
+[sub_resource type="Animation" id="Animation_mwf8v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo/logo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title_logo/logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(236, 83)]
+}
+
+[sub_resource type="Animation" id="Animation_qooff"]
+resource_name = "look_down"
+length = 1.4
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo/logo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title_logo/logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(236, 83)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtm5c"]
+_data = {
+&"RESET": SubResource("Animation_mwf8v"),
+&"look_down": SubResource("Animation_qooff")
+}
+
+[sub_resource type="Animation" id="Animation_5tirf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo/title:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sbo6t"]
+resource_name = "title_animation"
+length = 1.2
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title_logo/title:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73ijk"]
+_data = {
+&"RESET": SubResource("Animation_5tirf"),
+&"title_animation": SubResource("Animation_sbo6t")
+}
+
+[node name="Main_menuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxllw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.14902, 0.196078, 1)
+
+[node name="title_logo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1076.0
+offset_right = -613.0
+offset_bottom = 297.0
+grow_horizontal = 2
+
+[node name="title" type="Sprite2D" parent="title_logo"]
+position = Vector2(235, 222)
+scale = Vector2(6.875, 6.875)
+texture = ExtResource("2_qooff")
+hframes = 5
+
+[node name="logo" type="Sprite2D" parent="title_logo"]
+position = Vector2(236, 83)
+scale = Vector2(6.875, 6.875)
+texture = ExtResource("7_np0fa")
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="settings" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(616, 485)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.154
+anchor_right = 0.784
+anchor_bottom = 0.986
+offset_left = -11.368
+offset_top = 700.208
+offset_right = -0.167969
+offset_bottom = 700.072
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rayio")
+region_rect = Rect2(160.698, 32, 96.9247, 96.4586)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="title" type="Label" parent="settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_right = 226.5
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 61
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settings"]
+custom_minimum_size = Vector2(545, 450)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.279
+anchor_top = 0.203
+anchor_right = 0.7
+anchor_bottom = 1.0
+offset_left = -127.864
+offset_top = -0.417007
+offset_right = 157.8
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="symbols" type="CheckButton" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_vxllw")
+theme_override_font_sizes/font_size = 30
+text = "Disable symbols"
+
+[node name="symbols_des" type="Label" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.735559, 0.728644, 0.711345, 1)
+theme_override_font_sizes/font_size = 21
+text = "When answer is being checked, symbols are not counted
+(EX: file.exe = to fileexe)"
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="white_space" type="CheckButton" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_j5441")
+theme_override_font_sizes/font_size = 30
+text = "Disable  whitespace"
+
+[node name="space_des" type="Label" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.735559, 0.728644, 0.711345, 1)
+theme_override_font_sizes/font_size = 21
+text = " When answer is being checked, 	whitespaces is 	not counted
+(EX: fileexe is equal to file exe)"
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="typo" type="CheckButton" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_vxllw")
+theme_override_font_sizes/font_size = 30
+text = "Typographical error correction"
+
+[node name="typo_des" type="Label" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.735559, 0.728644, 0.711345, 1)
+theme_override_font_sizes/font_size = 21
+text = "Consider correct if there are atleast 2 characters mistyped; it doesnt apply on 3 characters words."
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="autotimer" type="CheckButton" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_vxllw")
+theme_override_font_sizes/font_size = 30
+text = "Auto-timer"
+
+[node name="autotimer_des" type="Label" parent="settings/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.735559, 0.728644, 0.711345, 1)
+theme_override_font_sizes/font_size = 21
+text = "Each flashcard will auto increment the time by 1m "
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 160
+
+[node name="save_back" type="Button" parent="settings"]
+custom_minimum_size = Vector2(342, 57)
+layout_mode = 2
+anchor_left = 0.227
+anchor_top = 0.868
+anchor_right = 0.782
+anchor_bottom = 0.974
+offset_left = 0.167999
+offset_top = -0.037323
+offset_right = 0.287964
+offset_bottom = -0.171326
+theme = SubResource("Theme_qooff")
+theme_override_font_sizes/font_size = 40
+text = "Save and Back"
+icon_alignment = 1
+
+[node name="menu" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_top = 0.472
+anchor_right = 0.704
+anchor_bottom = 1.046
+offset_left = -944.448
+offset_top = 0.144012
+offset_right = -945.008
+offset_bottom = 0.192017
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_rayio")
+region_rect = Rect2(32, 31.2238, 96, 96.7762)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -112.0
+offset_right = 104.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4pl3l")
+text = "Play"
+
+[node name="option" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4pl3l")
+text = "Settings"
+
+[node name="quit" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4pl3l")
+text = "Quit"
+
+[node name="shop" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.949
+anchor_right = 0.083
+anchor_bottom = 0.949
+offset_left = -295.616
+offset_top = -161.952
+offset_right = -167.616
+offset_bottom = -33.952
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("10_xife4")
+
+[node name="how_to_play" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 3.0
+offset_right = 1328.0
+offset_bottom = 131.0
+scale = Vector2(0.48, 0.48)
+texture_normal = ExtResource("10_wsifg")
+
+[node name="Label" type="Label" parent="how_to_play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 1.12
+anchor_right = 0.369
+anchor_bottom = 1.12
+offset_left = -95.232
+offset_top = -17.36
+offset_right = -2.232
+offset_bottom = 2.30666
+scale = Vector2(2.17, 2.17)
+theme_override_fonts/font = ExtResource("11_wsifg")
+text = "HOW TO PLAY"
+
+[node name="maze_options" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.084
+anchor_top = 0.074
+anchor_right = 0.907
+anchor_bottom = 0.921
+offset_left = 0.232002
+offset_top = -647.952
+offset_right = 0.135986
+offset_bottom = -647.808
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rayio")
+region_rect = Rect2(31.2397, 31.9156, 97.2775, 97.5451)
+
+[node name="title_maze" type="Label" parent="maze_options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.301
+anchor_top = 0.128
+anchor_right = 0.711
+anchor_bottom = 0.197
+offset_left = -4.34802
+offset_top = -13.272
+offset_right = -262.028
+offset_bottom = -34.153
+scale = Vector2(3, 3)
+text = "Choose a Maze Design"
+
+[node name="return" type="TextureButton" parent="maze_options"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.051
+anchor_top = 0.044
+anchor_right = 0.138
+anchor_bottom = 0.195
+offset_left = -0.348003
+offset_top = -0.156002
+offset_right = 45.176
+offset_bottom = 44.945
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("10_lju1q")
+texture_hover = ExtResource("11_bet7a")
+
+[node name="qr_maze" type="TextureButton" parent="maze_options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+anchor_left = 0.155
+anchor_top = 0.299
+anchor_right = 0.424
+anchor_bottom = 0.709
+offset_left = 30.06
+offset_top = -0.151016
+offset_right = -74.952
+offset_bottom = -75.241
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("10_mtm5c")
+texture_hover = ExtResource("11_73ijk")
+stretch_mode = 0
+
+[node name="linear_maze" type="TextureButton" parent="maze_options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+anchor_left = 0.553
+anchor_top = 0.302
+anchor_right = 0.79
+anchor_bottom = 0.712
+offset_left = -0.244019
+offset_top = 0.201996
+offset_right = -74.92
+offset_bottom = -74.888
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("11_sbo6t")
+texture_hover = ExtResource("12_5tirf")
+stretch_mode = 0
+
+[node name="transitions" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_lju1q")
+}
+
+[node name="logo" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_mtm5c")
+}
+
+[node name="title" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_73ijk")
+}
+
+[connection signal="toggled" from="settings/VBoxContainer/symbols" to="." method="_on_symbols_toggled"]
+[connection signal="toggled" from="settings/VBoxContainer/white_space" to="." method="_on_white_space_toggled"]
+[connection signal="toggled" from="settings/VBoxContainer/typo" to="." method="_on_typo_toggled"]
+[connection signal="toggled" from="settings/VBoxContainer/autotimer" to="." method="_on_autotimer_toggled"]
+[connection signal="pressed" from="settings/save_back" to="." method="_on_save_back_pressed"]
+[connection signal="mouse_entered" from="menu/VBoxContainer/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="menu/VBoxContainer/play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="menu/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="shop" to="." method="_on_shop_mouse_entered"]
+[connection signal="mouse_exited" from="shop" to="." method="_on_shop_mouse_exited"]
+[connection signal="pressed" from="shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="how_to_play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="maze_options/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="maze_options/qr_maze" to="." method="_on_qr_maze_pressed"]
+[connection signal="pressed" from="maze_options/linear_maze" to="." method="_on_linear_maze_pressed"]

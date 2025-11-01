@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://dovra4nvdc0vy"]
+
+[ext_resource type="Script" uid="uid://tivtb3lpgqfv" path="res://scripts/result_boxes.gd" id="1_4haw3"]
+[ext_resource type="Theme" uid="uid://by4nxdu6ca11n" path="res://assets/GUI RESOURCES/green_result.tres" id="1_pp2x2"]
+[ext_resource type="Texture2D" uid="uid://bjpro7p4oq02k" path="res://assets/Image_assets/display/logo.png" id="2_pp2x2"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="3_bvepc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoyc8"]
+bg_color = Color(0.243137, 0.227451, 0.227451, 0)
+
+[sub_resource type="Theme" id="Theme_pp2x2"]
+Label/styles/normal = SubResource("StyleBoxFlat_aoyc8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng70m"]
+bg_color = Color(0.0509804, 0.109804, 0.0823529, 0.423529)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4haw3"]
+bg_color = Color(0.052807, 0.110674, 0.08386, 0.423529)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_ng70m"]
+Button/styles/hover = SubResource("StyleBoxFlat_ng70m")
+Button/styles/normal = SubResource("StyleBoxFlat_4haw3")
+
+[node name="result_boxes" type="Control"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchor_top = 0.005
+anchor_right = 1.0
+anchor_bottom = 0.515
+offset_top = -0.24
+offset_right = -7.0
+offset_bottom = 8.27997
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_4haw3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -2.145
+offset_top = -3.0
+offset_right = 5.14502
+offset_bottom = -2.99997
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pp2x2")
+
+[node name="question" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.348
+anchor_top = 0.012
+anchor_right = 0.954
+anchor_bottom = 0.773
+offset_left = 11.8
+offset_top = -0.0679998
+offset_right = -0.100098
+offset_bottom = -0.0470276
+theme = SubResource("Theme_pp2x2")
+theme_override_font_sizes/font_size = 35
+text = "No label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 11
+clip_text = true
+
+[node name="correct_answer" type="Label" parent="Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.362
+anchor_top = 0.451
+anchor_right = 0.981
+anchor_bottom = 0.746
+offset_left = -0.300018
+offset_top = 0.110992
+offset_right = -0.150024
+offset_bottom = 28.751
+theme = SubResource("Theme_pp2x2")
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="user_answer" type="Label" parent="Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.358
+anchor_top = 0.012
+anchor_right = 0.995
+anchor_bottom = 0.431
+offset_left = 0.299957
+offset_top = -0.0679998
+offset_right = -0.250122
+offset_bottom = -0.109009
+theme = SubResource("Theme_pp2x2")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 171
+clip_text = true
+
+[node name="question_img" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.072
+anchor_right = 0.327
+anchor_bottom = 0.936
+offset_left = -0.0230007
+offset_top = 0.0879993
+offset_right = 0.276978
+offset_bottom = 0.143982
+texture = ExtResource("2_pp2x2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="show_button" type="Button" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.737
+anchor_top = 0.779
+anchor_right = 0.988
+anchor_bottom = 0.912
+offset_left = -42.55
+offset_top = -0.0809937
+offset_right = -0.199951
+offset_bottom = -0.167999
+theme = SubResource("Theme_ng70m")
+theme_override_fonts/font = ExtResource("3_bvepc")
+theme_override_font_sizes/font_size = 20
+text = "SHOW ANSWER"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Panel/show_button" to="." method="_on_show_button_pressed"]

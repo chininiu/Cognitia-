@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgddltlpqbp78"]
+
+[ext_resource type="Script" uid="uid://qtt4xmfmrxxv" path="res://scripts/node.gd" id="1_wgwxw"]
+[ext_resource type="PackedScene" uid="uid://cllpdt06k8qk1" path="res://scenes/opening_scene.tscn" id="2_ncig7"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_wgwxw")
+
+[node name="Opening Scene" type="Node" parent="."]
+
+[node name="Control" parent="Opening Scene" instance=ExtResource("2_ncig7")]
+unique_name_in_owner = true
+
+[node name="Main_Menu" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Question_scene" type="Node" parent="."]
+unique_name_in_owner = true

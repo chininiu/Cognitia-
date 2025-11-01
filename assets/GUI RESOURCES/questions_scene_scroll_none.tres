@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://y47r3hg0jxr2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okaxy"]
+
+[resource]
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_okaxy")
+VScrollBar/styles/scroll_focus = null

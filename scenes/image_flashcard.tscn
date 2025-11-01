@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=3 uid="uid://ce7gs5ch6am45"]
+
+[ext_resource type="Script" uid="uid://d270dlalivouh" path="res://scripts/image_flashcard.gd" id="1_po4c8"]
+[ext_resource type="Texture2D" uid="uid://da8pjrah0gn8v" path="res://assets/Image_assets/buttons/themes_buttons.png" id="1_ucs11"]
+[ext_resource type="Texture2D" uid="uid://ynvt4o1kkt18" path="res://assets/Image_assets/buttons/delete_normal.png" id="3_uxfk1"]
+[ext_resource type="Texture2D" uid="uid://cut0lanqmytm0" path="res://assets/Image_assets/buttons/folder_normal.png" id="4_aiq1j"]
+[ext_resource type="Texture2D" uid="uid://dcc8ilhsirsp3" path="res://assets/Image_assets/buttons/delete_hover.png" id="4_fxafm"]
+[ext_resource type="Theme" uid="uid://ca7vd0ad8rx1e" path="res://assets/GUI RESOURCES/text_edit_flashcard.tres" id="5_7c6jp"]
+[ext_resource type="Texture2D" uid="uid://cjjtmalbv0qga" path="res://assets/Image_assets/buttons/folder_clicked.png" id="5_14vcu"]
+[ext_resource type="StyleBox" uid="uid://bw78khciulhio" path="res://assets/GUI RESOURCES/main_menu_ui_pressed.tres" id="7_50lsm"]
+[ext_resource type="StyleBox" uid="uid://qekhvork24j5" path="res://assets/GUI RESOURCES/main_menu_ui.hover.tres" id="8_7c6jp"]
+[ext_resource type="StyleBox" uid="uid://bifmme4lln7t4" path="res://assets/GUI RESOURCES/main_menu_ui.theme.tres" id="9_2fxhf"]
+
+[sub_resource type="Theme" id="Theme_3274v"]
+TextEdit/colors/background_color = Color(0.329412, 0.298039, 0.423529, 1)
+
+[sub_resource type="Theme" id="Theme_mdfad"]
+Button/styles/hover = ExtResource("8_7c6jp")
+Button/styles/hover_pressed = ExtResource("7_50lsm")
+Button/styles/normal = ExtResource("9_2fxhf")
+
+[node name="image_flashcards" type="Control"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_po4c8")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a File"
+position = Vector2i(0, 36)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_right = 0.954
+anchor_bottom = 1.009
+offset_left = 0.0719986
+offset_right = -0.00805664
+offset_bottom = 0.167969
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ucs11")
+region_rect = Rect2(161, 32, 97, 98)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="question" type="TextureRect" parent="NinePatchRect"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+anchor_left = 0.325
+anchor_top = 0.024
+anchor_right = 0.712
+anchor_bottom = 0.544
+offset_left = -7.55017
+offset_top = 0.304011
+offset_right = -0.44812
+offset_bottom = 0.223969
+expand_mode = 1
+stretch_mode = 5
+
+[node name="answer" type="TextEdit" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.219
+anchor_top = 0.651
+anchor_right = 0.785
+anchor_bottom = 0.942
+offset_left = 0.173981
+offset_top = 0.245667
+offset_right = -0.390015
+offset_bottom = -0.0684814
+theme = SubResource("Theme_3274v")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Enter your answer here"
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.024
+anchor_right = 0.062
+anchor_bottom = 0.091
+offset_left = 0.027998
+offset_top = 0.304
+offset_right = 81.652
+offset_bottom = 84.486
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.365, 0.365)
+texture_normal = ExtResource("3_uxfk1")
+texture_hover = ExtResource("4_fxafm")
+
+[node name="label" type="TextEdit" parent="NinePatchRect"]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.159
+anchor_top = 0.113
+anchor_right = 0.777
+anchor_bottom = 0.557
+offset_left = 0.413986
+offset_top = -10.902
+offset_right = 0.0419922
+offset_bottom = -0.277985
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_7c6jp")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Add your label here"
+wrap_mode = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92
+anchor_top = 0.334
+anchor_right = 0.92
+anchor_bottom = 0.334
+offset_left = -116.68
+offset_top = -69.436
+offset_right = 121.32
+offset_bottom = 148.564
+scale = Vector2(0.67, 0.67)
+drag_area_highlight_in_editor = true
+
+[node name="open_files_btn" type="TextureButton" parent="NinePatchRect/VSplitContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_aiq1j")
+texture_pressed = ExtResource("5_14vcu")
+stretch_mode = 5
+
+[node name="add_label" type="Button" parent="NinePatchRect/VSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_mdfad")
+theme_override_font_sizes/font_size = 41
+text = "Add Label"
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="NinePatchRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VSplitContainer/open_files_btn" to="." method="_on_open_files_btn_pressed"]
+[connection signal="pressed" from="NinePatchRect/VSplitContainer/add_label" to="." method="_on_add_label_pressed"]

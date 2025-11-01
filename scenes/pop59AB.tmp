@@ -1,0 +1,166 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxry13r4ljdqd"]
+
+[ext_resource type="Script" path="res://scripts/pop_up_quest.gd" id="1_4tkav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5djpj"]
+bg_color = Color(0.454902, 0.317647, 0.470588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgd03"]
+bg_color = Color(0.701306, 0.548759, 0.717985, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4tkav")
+
+[node name="container" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.986
+offset_left = 68.0
+offset_top = 99.0
+offset_right = -93.0
+offset_bottom = 11.072
+
+[node name="Panel" type="Panel" parent="container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.085
+anchor_right = 0.962
+anchor_bottom = 0.906
+offset_left = 8.381
+offset_top = 0.684998
+offset_right = -8.13098
+offset_bottom = -3.323
+theme_override_styles/panel = SubResource("StyleBoxFlat_5djpj")
+
+[node name="Panel" type="Panel" parent="container/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.113
+anchor_top = 0.225
+anchor_right = 0.915
+anchor_bottom = 0.627
+offset_left = -0.39032
+offset_top = 0.118309
+offset_right = -0.0898438
+offset_bottom = -0.123627
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgd03")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="container/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="popup_question" type="Label" parent="container/Panel/Panel/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+text = "
+"
+autowrap_mode = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="container"]
+layout_mode = 2
+anchor_left = 0.182
+anchor_top = 0.664
+anchor_right = 0.795
+anchor_bottom = 0.776
+offset_left = 0.638
+offset_top = 0.135986
+offset_right = 16.155
+offset_bottom = 21.424
+
+[node name="popup_answer" type="LineEdit" parent="container/ScrollContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Answer"
+alignment = 1
+expand_to_text_length = true
+
+[node name="hint_button" type="Button" parent="container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.837
+anchor_top = 0.75
+anchor_right = 0.912
+anchor_bottom = 0.864
+offset_left = 2.28699
+offset_top = 6.74997
+offset_right = 2.88696
+offset_bottom = 6.87799
+text = "hint"
+
+[node name="submit_button" type="Button" parent="container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.748
+anchor_right = 0.153
+anchor_bottom = 0.852
+offset_left = 0.377998
+offset_top = 7.02798
+offset_right = -0.0220032
+offset_bottom = 6.63599
+text = "SUBMIT"
+
+[node name="skip_button" type="Button" parent="container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.12
+anchor_right = 0.122
+anchor_bottom = 0.198
+offset_left = 0.463997
+offset_top = 1.31999
+offset_right = -0.352005
+offset_bottom = 0.775986
+grow_horizontal = 2
+text = "Skip"
+
+[node name="label_wrong" type="Label" parent="container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241
+anchor_top = 0.924
+anchor_right = 0.73
+anchor_bottom = 0.983
+offset_left = 1.09097
+offset_top = 8.56396
+offset_right = 0.762939
+offset_bottom = 8.33197
+horizontal_alignment = 1
+
+[connection signal="focus_entered" from="container/ScrollContainer2/popup_answer" to="." method="_on_popup_answer_focus_entered"]
+[connection signal="pressed" from="container/submit_button" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="container/skip_button" to="." method="_on_skip_button_pressed"]

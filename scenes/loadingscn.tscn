@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://cib7eqq6d1j62"]
+
+[ext_resource type="Script" uid="uid://ct36rbmen7tyv" path="res://scripts/loadingscn.gd" id="1_03pa0"]
+[ext_resource type="FontFile" uid="uid://c7gkga2rl8br5" path="res://assets/fonts/PixelOperator8.ttf" id="2_n40er"]
+[ext_resource type="Texture2D" uid="uid://djkmfu5n5u7p5" path="res://deployment_files/index.icon.png" id="2_wcj0e"]
+[ext_resource type="FontFile" uid="uid://pojwrv6xikyl" path="res://assets/fonts/PixelOperator.ttf" id="3_o5ver"]
+
+[node name="loading" type="CanvasLayer"]
+script = ExtResource("1_03pa0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 4.45605
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(941, 352)
+color = Color(0.369698, 0.349864, 0.457274, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 535.0
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0.225018, 0.211075, 0.288081, 1)
+
+[node name="generating label_" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = -96.0
+offset_right = 590.0
+offset_bottom = -1.18396
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(487.385, 60.6993)
+theme_override_fonts/font = ExtResource("2_n40er")
+theme_override_font_sizes/font_size = 86
+text = "Generating Maze"
+
+[node name="trivia" type="Label" parent="."]
+offset_left = 270.0
+offset_top = 486.0
+offset_right = 949.0
+offset_bottom = 547.0
+pivot_offset = Vector2(357, 28)
+theme_override_fonts/font = ExtResource("3_o5ver")
+theme_override_font_sizes/font_size = 35
+text = "If cursed, active skill will halt"
+horizontal_alignment = 1
+
+[node name="logo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.932
+anchor_right = 0.95
+anchor_bottom = 0.932
+offset_left = -21.4
+offset_top = -19.936
+offset_right = 18.6
+offset_bottom = 20.064
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -6.28319
+scale = Vector2(2, 2)
+pivot_offset = Vector2(19, 20)
+texture = ExtResource("2_wcj0e")
