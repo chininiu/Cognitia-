@@ -15,5 +15,5 @@
 <br>
 <div><b>Version Used: Godot_v_4.4.1</b></div>
 <br>
-<b> Link🔗(alternative) :<b> <span><a href = preeminent-narwhal-85f273.netlify.app > preeminent-narwhal-85f273.netlify.app </a></span>
+<b> Link🔗(alternative) :<b> <span> preeminent-narwhal-85f273.netlify.app</span>
 <div><b>This is purposely built for desktop, website version has minimal errors </b></div>
