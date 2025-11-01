@@ -12,6 +12,6 @@
 <hr>
 <h3>How to play</h3>
 <div>Make sure you have the Godot engine installed in your device. You can clone this repository and run with the Godot Engine</div>
-<b>Version Used: </b> <span><p> Godot_v_4.4.1</p></span> 
+<span><b>Version Used: </b> <p> Godot_v_4.4.1</p></span> 
 <b> LINK🔗(alternative) :<b> <span><a href = preeminent-narwhal-85f273.netlify.app > preeminent-narwhal-85f273.netlify.app </a></span>
 <div><b>This is purposely built for desktop, website version has minimal errors </b></div>
